@@ -36,18 +36,12 @@
                 </li>
             </ul>
 
-            <div v-if="tareas.length != 0" id="botonera">
-                <button class="col-3" type="button" id="btn">Todas</button>
-                <button class="col-3" type="button" id="btn">Completadas</button>
-                <button class="col-3" type="button" id="btn">Pendientes</button>
-            </div>
-
             <form @submit.prevent="agregarTarea">
                 <input v-model="nuevaTarea" placeholder="Escribe tu tarea..." type="text" name="nuevaTarea" id="nuevaTarea" value="" class="col-8">
-                <button type="submit" name="button" id="btn" class="col-3">Agregar</button>
+                <button class="col-3 btn" type="submit" name="button" id="btn">Agregar</button>
             </form>
 
-            <button @click="marcarTodas" type="button" class="col-11" id="btn">Marcar Todas</button>
+            <button @click="marcarTodas" class="col-11 btn" type="button" id="btn">Marcar Todas</button>
 
         </section>
         

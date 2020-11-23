@@ -4,6 +4,15 @@ body {
     color: white;
   }
 
+#app{
+  background-color: #63ADF2;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1em;
+  width: 40%;
+  margin: 0 auto;
+}
+
 .done{
     text-decoration: line-through;
 }
@@ -15,6 +24,10 @@ header {
   margin-bottom: 20px;
 }
 
+section {
+  text-align: center;
+}
+
 h3 {
   margin-top:2.6rem;
   margin-bottom:2.6rem;
@@ -22,6 +35,10 @@ h3 {
 	letter-spacing:.05em;
 	font-style:italic;
 	opacity:0.8;
+}
+
+hr{
+  color: white;
 }
 
 ul {
@@ -41,37 +58,13 @@ li {
   transition: width 2s;
 }
 
-hr{
-  color: white;
-}
-
-section {
-  text-align: center;
-  /* margin-left: 50px;
-  margin-right: 50px; */
-}
-
 ul img{
   width: 20px;
 }
 
-#app{
-  background-color: #63ADF2;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-size: 1em;
-  width: 40%;
-  margin: 0 auto;
-}
-
 form{
-  /* background-color:red ; */
   height: 80px;
   margin-top: 50px;
-}
-
-label {
-  font-size: 1.5em;
 }
 
 input{
@@ -80,19 +73,13 @@ input{
   height: 50px;
   margin: 0;
   padding: 0;
-  /* width: 60%; */
 }
-
 
 #check {
   height: auto;
 }
 
-#btn{
-  /* padding: 0;
-  margin: 0;
-  height: 50px; */
-
+.btn{
   padding:0;
   height: 50px;
 	border:none;
@@ -106,12 +93,7 @@ input{
 	transition:background .2s ease-out;
 }
 
-#btn:hover {
-	background: #73B5F3;
-}
-
-
-#botonera{
-  display: flex;
-  justify-content: space-around;
+.btn:hover {
+  background: #73B5F3;
+  color:white;
 }
