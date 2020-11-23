@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="shortcut icon" href="">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Devactory</title>
+
+
+</head>
+<body>
+
+    <div id="app">
+          
+        <header>
+            <h1>Lista To-do</h1>
+            <hr>
+        </header>
+        
+        <section>
+
+            <h3 v-if="tareas.length == 0">La lista esta vacia</h3>
+
+            <ul v-else>
+                <li v-for="tarea in tareas">
+                    <span :class="{ done: tarea.hecho }">{{tarea.titulo}}</span>
+                    <div>
+                        <input type="checkbox" name="" id="check" v-model="tarea.hecho">
+                        <img @click="eliminarTarea(tarea)" type="button" src="img/icons8-basura-30.png" alt="">
+                    </div>
+                </li>
+            </ul>
+
+            <div v-if="tareas.length != 0" id="botonera">
+                <button class="col-3" type="button" id="btn">Todas</button>
+                <button class="col-3" type="button" id="btn">Completadas</button>
+                <button class="col-3" type="button" id="btn">Pendientes</button>
+            </div>
+
+            <form @submit.prevent="agregarTarea">
+                <input v-model="nuevaTarea" placeholder="Escribe tu tarea..." type="text" name="nuevaTarea" id="nuevaTarea" value="" class="col-8">
+                <button type="submit" name="button" id="btn" class="col-3">Agregar</button>
+            </form>
+
+            <button @click="marcarTodas" type="button" class="col-11" id="btn">Marcar Todas</button>
+
+        </section>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
